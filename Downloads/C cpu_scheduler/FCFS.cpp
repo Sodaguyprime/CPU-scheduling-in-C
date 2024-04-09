@@ -37,6 +37,7 @@ void push(nodeptr& head, int data){
 void Adding_to_list(nodeptr& head){
 ifstream ourinput;
     char D;
+    int testa;
     ourinput.open("input.txt");
      {
         if(ourinput.fail()){
@@ -45,8 +46,11 @@ ifstream ourinput;
     }
     do {
         D = ourinput.get();
-        if(D != '\n' || D !=' ' || D !=':'){
-        push(head,D);
+        if(D != '\n' && D !=' ' && D !=':'){
+         if (isdigit(D)) {
+        testa = D - '0';
+        push(head, testa);
+    }
         }
     }while(ourinput.good());
     ourinput.close();
@@ -98,3 +102,13 @@ while (display != NULL)
     display = display->next;
 }
 }
+
+
+/* for testing the issue we had:while (ourinput.get(D)) {
+    cout << "Character: " << D << ", ASCII value: " << static_cast<int>(D) << endl;
+    if (isdigit(D)) {
+        testa = D - '0';
+        push(head, testa);
+    }
+}
+*/
