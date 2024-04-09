@@ -12,6 +12,23 @@ class proccessfromfiles {
     int processPriorty;
 };
 
+int linked_data(){
+    struct Node
+{
+    int data;
+    Node *next;
+};
+typedef Node* nodeptr;
+nodeptr head;
+head = new Node();
+head ->data = 20;
+head ->next = NULL;
+
+
+
+
+return head->data;
+}
 int howmanyprocess(){
     ifstream ourinput;
     char D;
@@ -34,6 +51,8 @@ int howmanyprocess(){
 
 
 int main(){
+
+
     cout<<"|*---------------------------------------------------------*|"<<endl;
     cout<<"|*---------------------------------------------------------*|"<<endl;
     cout<<"|*---------------------FCFS SCHEDULING---------------------*|"<<endl;
@@ -42,4 +61,8 @@ int main(){
     cout<<"The Burst time,Arrival time and Priority for the proccess are at follows:"<<endl;
     int totalnumber = howmanyprocess();
     cout<<"The number of processes:  "<<totalnumber<<endl;
+    totalnumber = linked_data();
+    cout<<"The number of processes:  "<<totalnumber<<endl;
+
+
 }
